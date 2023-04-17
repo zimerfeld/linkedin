@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de barras horizontais</title>   
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <canvas id="grafico"></canvas>
+    <script>
+      var ctx = document.getElementById('grafico').getContext('2d');
+      var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['JavaScript', 'Python', 'Java', 'C#', 'PHP', 'C++', 'TypeScript', 'Shell', 'C', 'Ruby'],
+          datasets: [
+            {
+              label: 'Popularidade em 2019',
+              backgroundColor: 'rgba(54, 162, 235, 0.5)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1,
+              data: [69.7, 41.7, 41.1, 34.4, 25.9, 23.5, 17.4, 17.2, 15.8, 8.4],
+            },
+          ],
+        },
+        options: {
+          scales: {
+            xAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+    </script>
+</body>
+</html>
