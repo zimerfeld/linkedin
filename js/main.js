@@ -28,8 +28,8 @@ class Animal {
 
 
 class clsTemplateParent {
-    constructor (_x) {
-        this._x = _x;
+    constructor (x) {
+        this._x = x;
     }
 
     get x() {
@@ -37,14 +37,14 @@ class clsTemplateParent {
     }
 
     set x(value) {
-        this.x = value;
+        this._x = value;
     }
 }
 
 class clsTemplateChild extends clsTemplateParent {
-    constructor (_x, _y) {
-        super(_x);
-        this._y = _y;
+    constructor (x, y) {
+        super(x);
+        this._y = y;
     }
 
     get y() {
@@ -52,7 +52,7 @@ class clsTemplateChild extends clsTemplateParent {
     }
 
     set y(value) {
-        this.y = value;
+        this._y = value;
     }
 }
 
@@ -69,3 +69,29 @@ mySubObj = new clsTemplateChild(x, y);
 console.log(mySubObj);
 console.log(mySubObj.x);
 console.log(mySubObj.y);
+
+
+function pizzaFactory (size) {
+    const _size = size;
+    return {
+        bake: () => console.log(`baking ${_size}`)
+    };
+}
+
+const mypizza = pizzaFactory("small");
+mypizza.bake();
+
+
+const myjson = {
+    name: "renato",
+    ling: ["C#","Javascript", "typescript"],
+    method: function () {
+        console.log("method");
+    }
+}
+
+const sendJSON = JSON.stringify(myjson);
+console.log(sendJSON);
+
+const receiveJSON = JSON.parse(sendJSON);
+console.log(receiveJSON);
