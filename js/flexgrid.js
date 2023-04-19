@@ -6,6 +6,7 @@ spans[0].style.display = "flex";
 // spans[0].style.flexDirection = "row";
 // spans[0].style.flexDirection = "column";
 spans[0].style.flexWrap = "wrap";
+spans[0].style.margin = "10px";
 
 let divs = document.getElementsByTagName("div");
 for (let i = 0; i < divs.length; i++) {
